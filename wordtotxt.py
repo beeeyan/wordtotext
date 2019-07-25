@@ -1,5 +1,6 @@
 import docx
 import datetime
+import sys
 import configparser
 
 # 各定数の取得
