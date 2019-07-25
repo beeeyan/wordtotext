@@ -7,7 +7,11 @@ import configparser
 const = configparser.ConfigParser()
 const.read('conf/const.ini')
 const_path = const.get('common','const_path')
-file_name = const.get('common','file_name')
+
+if len(sys.argv) < 2:
+    file_name = const.get('common','file_name')
+else:
+    file_name = sys.argv[1]
 
 now_date = datetime.datetime.today().strftime("%Y%m%d%H%M%S")
 
@@ -22,6 +26,9 @@ with open(txt_path, mode='a') as f:
         f.write(par.text + '\n')
 
 const.set('common','old_date',now_date)
+if len(sys.argv) >= 2:
+    const.set('common','file_name',file_name)
+
 # 定数の更新
 with open('conf/const.ini', 'w') as f:
     const.write(f)
