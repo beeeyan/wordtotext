@@ -38,5 +38,4 @@ and, created `{const_path}/bk/{file_name}_nowdatetime_.docx` as backup file.
   
 I use `JotterPad`, writing the novel on a mobile device.  
 `JotterPad` : https://play.google.com/store/apps/details?id=com.jotterpad.x  
-I recommend saving the text file to the your google drive.  
-test・test
+END
