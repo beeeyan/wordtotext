@@ -8,7 +8,7 @@ const = configparser.ConfigParser()
 const.read('conf/const.ini')
 const_path = const.get('common','const_path')
 file_name = const.get('common','file_name')
-old_date = const.get('common','old_date')
+old_date = const.get('common',file_name)
 
 now_date = datetime.datetime.today().strftime("%Y%m%d%H%M%S")
 
@@ -25,6 +25,8 @@ try:
         word_list = doc.paragraphs
         text_list = f.readlines()
         text_list = [str.rstrip('\n') for str in text_list]
+        print(text_list[len(word_list)-1])
+        print(word_list[len(word_list)-1].text)
         if len(word_list) < len(text_list) and text_list[len(word_list)-1] == word_list[len(word_list)-1].text:
             for t_index in range(len(word_list), len(text_list)):
                 doc.add_paragraph(text_list[t_index])

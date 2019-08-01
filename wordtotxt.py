@@ -25,7 +25,7 @@ with open(txt_path, mode='a') as f:
     for par in doc.paragraphs:
         f.write(par.text + '\n')
 
-const.set('common','old_date',now_date)
+const.set('common',file_name,now_date)
 if len(sys.argv) >= 2:
     const.set('common','file_name',file_name)
 
