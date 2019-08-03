@@ -2,6 +2,7 @@
 import docx
 import datetime
 import configparser
+import sys
 
 # 各定数の取得
 const = configparser.ConfigParser()
