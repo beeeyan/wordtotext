@@ -7,7 +7,12 @@ import configparser
 const = configparser.ConfigParser()
 const.read('conf/const.ini')
 const_path = const.get('common','const_path')
-file_name = const.get('common','file_name')
+
+if len(sys.argv) < 2:
+    file_name = const.get('common','file_name')
+else:
+    file_name = sys.argv[1]
+
 old_date = const.get('common',file_name)
 
 now_date = datetime.datetime.today().strftime("%Y%m%d%H%M%S")
